@@ -21,14 +21,14 @@ mongoose.connection.on('disconnected', function () {
 
 var employeeSchema = new mongoose.Schema({
   name: {type: String},
-  email: {type: String, unique:true},
+  email: {type: String},
   dob: {type: Date},
   department: {type: String},
-  gender: {type: String, unique:true},
-  age: {type: Number, unique:true}
+  gender: {type: String},
+  age: {type: Number}
 
 });
 
 // Build the Employee model
-mongoose.model( 'Employee', employeeSchema );
+module.exports = mongoose.model( 'Employee', employeeSchema );
 
